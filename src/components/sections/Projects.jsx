@@ -4,161 +4,122 @@ export const Projects = () => {
   return (
     <section
       id="projects"
-      className="min-h-screen flex items-center justify-center py-20"
+      className="min-h-screen flex items-center justify-center py-20 bg-gradient-to-br from-pink-50 to-blue-50"
     >
       <RevealOnScroll>
         <div className="max-w-5xl mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
-            {" "}
+          <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent text-center">
             Featured Projects
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition">
-              <h3 className="text-xl font-bold mb-2"> Cloud Platform</h3>
-              <p className="text-gray-400 mb-4">
-                Scalable cloud infrastructure management with real-time
-                monitoring and automated scaling.
+
+            {/* Chat With PDFs */}
+            <div className="p-6 rounded-xl bg-white border border-pink-200 shadow hover:-translate-y-1 hover:shadow-lg transition">
+              <h3 className="text-xl font-bold mb-2 text-gray-800">Chat With PDFs</h3>
+              <p className="text-gray-600 mb-4">
+                A chatbot website to upload PDFs and ask context-aware questions using AI.
+                Integrated Supabase Auth for secure login and Ollama API for accurate responses.
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
-                {["React", "Node.js", "AWS", "Docker"].map((tech, key) => (
+                {["Next.js", "Supabase", "Ollama API", "TailwindCSS"].map((tech, key) => (
                   <span
                     key={key}
-                    className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 
-                                    hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)] transition-all
-                    "
+                    className="bg-pink-100 text-pink-600 py-1 px-3 rounded-full text-sm hover:bg-pink-200 transition"
                   >
                     {tech}
                   </span>
                 ))}
               </div>
-
-              <div className="flex justify-between items-center">
-                <a
-                  href="#"
-                  className="text-blue-400 hover:text-blue-300 transition-colors my-4"
-                >
-                  View Project →
-                </a>
-              </div>
+              <a
+                href="https://github.com/Nishu-06/PDF-ChatBot"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-pink-500 hover:text-pink-400 transition-colors my-4"
+              >
+                View Project →
+              </a>
             </div>
-            <div
-              className="
-              glass p-6 rounded-xl border border-white/10 
-              hover:-translate-y-1 hover:border-blue-500/30
-              hover:shadow-[0_4px_20px_rgba(59,130,246,0.1)]
-              transition-all
-            "
-            >
-              <h3 className="text-xl font-bold mb-2">AI Analytics Dashboard</h3>
-              <p className="text-gray-400 mb-4">
-                ML-powered data visualization platform with predictive analytics
-                and interactive reports.
+
+            {/* Learning Management System */}
+            <div className="p-6 rounded-xl bg-white border border-pink-200 shadow hover:-translate-y-1 hover:shadow-lg transition">
+              <h3 className="text-xl font-bold mb-2 text-gray-800">Learning Management System</h3>
+              <p className="text-gray-600 mb-4">
+                MERN-based LMS with course creation, student enrollment, and role-based access.
+                Built responsive frontend and secure backend APIs for efficient management.
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
-                {["Python", "TensorFlow", "D3.js", "Flask"].map((tech, key) => (
+                {["MongoDB", "Express.js", "React", "Node.js"].map((tech, key) => (
                   <span
                     key={key}
-                    className="
-                      bg-blue-500/10 text-blue-500 py-1 px-3 
-                      rounded-full text-sm
-                      transition
-                      hover:bg-blue-500/20 hover:-translate-y-0.5
-                      hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)]
-                    "
+                    className="bg-pink-100 text-pink-600 py-1 px-3 rounded-full text-sm hover:bg-pink-200 transition"
                   >
                     {tech}
                   </span>
                 ))}
               </div>
-              <div className="flex justify-between items-center">
-                <a
-                  href="#"
-                  className="text-blue-400 hover:text-blue-300 transition-colors my-4"
-                >
-                  View Project →
-                </a>
-              </div>
+              <a
+                href="https://github.com/Nishu-06/learning_management_system"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-pink-500 hover:text-pink-400 transition-colors my-4"
+              >
+                View Project →
+              </a>
             </div>
 
-            <div
-              className="
-              glass p-6 rounded-xl border border-white/10 
-              hover:-translate-y-1 hover:border-blue-500/30
-              hover:shadow-[0_4px_20px_rgba(59,130,246,0.1)]
-              transition-all
-            "
-            >
-              <h3 className="text-xl font-bold mb-2">E-Commerce Web App</h3>
-              <p className="text-gray-400 mb-4">
-                Full-stack e-commerce with modern UI, secure payment
-                integration, and customizable product inventory.
+            {/* Fictional Tech Conference */}
+            <div className="p-6 rounded-xl bg-white border border-pink-200 shadow hover:-translate-y-1 hover:shadow-lg transition">
+              <h3 className="text-xl font-bold mb-2 text-gray-800">Fictional Tech Conference</h3>
+              <p className="text-gray-600 mb-4">
+                Responsive and modern tech conference site built with SvelteKit and Sveltestrap.
+                Integrated Google Form for attendee registration.
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
-                {["Next.js", "TypeScript", "Stripe", "PostgreSQL"].map(
-                  (tech) => (
-                    <span
-                      key={tech}
-                      className="
-                      bg-blue-500/10 text-blue-500 py-1 px-3 
-                      rounded-full text-sm
-                      transition
-                      hover:bg-blue-500/20 hover:-translate-y-0.5
-                      hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)]
-                    "
-                    >
-                      {tech}
-                    </span>
-                  )
-                )}
-              </div>
-              <div className="flex justify-between items-center">
-                <a
-                  href="#"
-                  className="text-blue-400 hover:text-blue-300 transition-colors my-4"
-                >
-                  View Project →
-                </a>
-              </div>
-            </div>
-
-            <div
-              className="
-              glass p-6 rounded-xl border border-white/10 
-              hover:-translate-y-1 hover:border-blue-500/30
-              hover:shadow-[0_4px_20px_rgba(59,130,246,0.1)]
-              transition-all
-            "
-            >
-              <h3 className="text-xl font-bold mb-2">Real-Time Chat App</h3>
-              <p className="text-gray-400 mb-4">
-                Scalable chat platform supporting real-time messaging, presence,
-                and group chat features.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {["Socket.IO", "Express", "React", "Redis"].map((tech, key) => (
+                {["SvelteKit", "Sveltestrap", "JavaScript", "CSS"].map((tech, key) => (
                   <span
                     key={key}
-                    className="
-                      bg-blue-500/10 text-blue-500 py-1 px-3 
-                      rounded-full text-sm
-                      transition
-                      hover:bg-blue-500/20 hover:-translate-y-0.5
-                      hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)]
-                    "
+                    className="bg-pink-100 text-pink-600 py-1 px-3 rounded-full text-sm hover:bg-pink-200 transition"
                   >
                     {tech}
                   </span>
                 ))}
               </div>
-              <div className="flex justify-between items-center ">
-                <a
-                  href="#"
-                  className="text-blue-400 hover:text-blue-300 transition-colors my-4"
-                >
-                  View Project →
-                </a>
-              </div>
+              <a
+                href="https://github.com/Nishu-06/Fictional-tech-conference"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-pink-500 hover:text-pink-400 transition-colors my-4"
+              >
+                View Project →
+              </a>
             </div>
+
+            {/* EcoSmart */}
+            <div className="p-6 rounded-xl bg-white border border-pink-200 shadow hover:-translate-y-1 hover:shadow-lg transition">
+              <h3 className="text-xl font-bold mb-2 text-gray-800">EcoSmart</h3>
+              <p className="text-gray-600 mb-4">
+                Sustainable e-commerce platform with carbon calculator and real-time cart updates.
+              </p>
+              <div className="flex flex-wrap gap-2 mb-4">
+                {["MongoDB", "Express.js", "React", "Node.js"].map((tech, key) => (
+                  <span
+                    key={key}
+                    className="bg-pink-100 text-pink-600 py-1 px-3 rounded-full text-sm hover:bg-pink-200 transition"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+              <a
+                href="https://github.com/Nishu-06/EcoSmart"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-pink-500 hover:text-pink-400 transition-colors my-4"
+              >
+                View Project →
+              </a>
+            </div>
+
           </div>
         </div>
       </RevealOnScroll>

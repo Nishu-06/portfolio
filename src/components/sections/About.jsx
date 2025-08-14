@@ -3,42 +3,53 @@ import { RevealOnScroll } from "../RevealOnScroll";
 export const About = () => {
   const frontendSkills = [
     "React",
-    "Vue",
-    "TypeScript",
+    "JavaScript",
     "TailwindCSS",
+    "Bootstrap",
     "Svelte",
   ];
 
-  const backendSkills = ["Node.js", "Python", "AWS", "MongoDB", "GraphQL"];
+  const backendSkills = [
+    "Node.js",
+    "Express.js",
+    "Python",
+    "AWS",
+    "MongoDB",
+    "MySQL",
+    "PostgreSQL",
+  ];
 
   return (
     <section
       id="about"
-      className="min-h-screen flex items-center justify-center py-20"
+      className="min-h-screen flex items-center justify-center py-20 bg-gradient-to-br from-pink-50 to-blue-50"
     >
       <RevealOnScroll>
         <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
-            {" "}
+          <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent text-center">
             About Me
           </h2>
 
-          <div className="rounded-xl p-8 border-white/10 border hover:-translate-y-1 transition-all">
-            <p className="text-gray-300 mb-6">
-              Passionate developer with expertise in building scalable web
-              applications and creating innovative solutions.
+          <div className="rounded-xl p-8 border border-pink-200 bg-white shadow-lg hover:-translate-y-1 transition-all">
+            <p className="text-gray-700 mb-6">
+              I’m a full-stack developer with a focus on MERN Stack, AI-powered
+              applications, and crafting sustainable, user-friendly solutions.
+              Proficient in Java, Python, JavaScript, and modern web
+              technologies, I enjoy solving complex problems and building
+              scalable applications.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="rounded-xl p-6 hover:-translate-y-1 transition-all">
-                <h3 className="text-xl font-bold mb-4"> Frontend</h3>
+              <div className="rounded-xl p-6 bg-pink-50 hover:-translate-y-1 transition-all">
+                <h3 className="text-xl font-bold mb-4 text-pink-600">
+                  Frontend
+                </h3>
                 <div className="flex flex-wrap gap-2">
                   {frontendSkills.map((tech, key) => (
                     <span
                       key={key}
-                      className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 
-                                    hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition
-                    "
+                      className="bg-pink-100 text-pink-600 py-1 px-3 rounded-full text-sm hover:bg-pink-200 
+                                    hover:shadow-[0_2px_8px_rgba(236,72,153,0.2)] transition"
                     >
                       {tech}
                     </span>
@@ -46,15 +57,16 @@ export const About = () => {
                 </div>
               </div>
 
-              <div className="rounded-xl p-6 hover:-translate-y-1 transition-all">
-                <h3 className="text-xl font-bold mb-4"> Backend</h3>
+              <div className="rounded-xl p-6 bg-pink-50 hover:-translate-y-1 transition-all">
+                <h3 className="text-xl font-bold mb-4 text-pink-600">
+                  Backend
+                </h3>
                 <div className="flex flex-wrap gap-2">
                   {backendSkills.map((tech, key) => (
                     <span
                       key={key}
-                      className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 
-                                    hover:shadow-[0_2px_8px_rgba(59,130,2246,0.2)] transition
-                    "
+                      className="bg-pink-100 text-pink-600 py-1 px-3 rounded-full text-sm hover:bg-pink-200 
+                                    hover:shadow-[0_2px_8px_rgba(236,72,153,0.2)] transition"
                     >
                       {tech}
                     </span>
@@ -65,41 +77,42 @@ export const About = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-            <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all">
-              <h3 className="text-xl font-bold mb-4"> 🏫 Education </h3>
-              <ul className="list-disc list-inside text-gray-300 space-y-2">
+            <div className="p-6 rounded-xl border border-pink-200 bg-white shadow-md hover:-translate-y-1 transition-all">
+              <h3 className="text-xl font-bold mb-4 text-pink-600">🏫 Education</h3>
+              <ul className="list-disc list-inside text-gray-700 space-y-2">
                 <li>
-                  <strong> B.S. in Computer Science </strong> - XYZ University
-                  (2016-2020)
+                  <strong>B.Tech in Computer Science Engineering</strong> -
+                  Vellore Institute of Technology, AP (2022–2026) — CGPA: 8.63
                 </li>
                 <li>
-                  Relevant Coursework: Data Structures, Web Development, Cloud
-                  Computing...
+                  Delhi Public School, BS City — 12th CBSE: 92.4%
+                </li>
+                <li>
+                  Mount Carmel School, Bokaro Thermal — 10th ICSE: 91.8%
                 </li>
               </ul>
             </div>
-            <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all">
-              <h3 className="text-xl font-bold mb-4"> 💼 Work Experience </h3>
-              <div className="space-y-4 text-gray-300">
+
+            <div className="p-6 rounded-xl border border-pink-200 bg-white shadow-md hover:-translate-y-1 transition-all">
+              <h3 className="text-xl font-bold mb-4 text-pink-600">💼 Experience</h3>
+              <div className="space-y-4 text-gray-700">
                 <div>
                   <h4 className="font-semibold">
-                    {" "}
-                    Software Engineer at ABC Corp (2020 - Present){" "}
+                    Web Development Team Member — NextGen Cloud Club (2024)
                   </h4>
                   <p>
-                    Developed and maintained microservices for cloud-based
-                    applications.
+                    Contributed to web development projects and coordinated
+                    nationwide event “Run Raise Repeat”.
                   </p>
                 </div>
 
                 <div>
                   <h4 className="font-semibold">
-                    {" "}
-                    Intern at DEF Startups (2019){" "}
+                    Finalist — Aerospanza Aviation Challenge (2024)
                   </h4>
                   <p>
-                    Assisted in building front-end components and integration
-                    REST APIs
+                    Collaborated in a team of 4, reaching top 10 nationwide in
+                    an aviation-focused hackathon.
                   </p>
                 </div>
               </div>
