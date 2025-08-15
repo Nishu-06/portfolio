@@ -19,13 +19,32 @@ export const About = () => {
     "PostgreSQL",
   ];
 
+  const toolsAndTechnologies = [
+    "Git & GitHub",
+    "Docker",
+    "Postman",
+    "Figma",
+    "CI/CD",
+    "Vercel",
+    "Supabase",
+  ];
+
+  const softSkills = [
+    "Communication",
+    "Analytical Thinking",
+    "Team Collaboration",
+    "Adaptability",
+    "Problem Solving",
+    "Time Management",
+  ];
+
   return (
     <section
       id="about"
       className="min-h-screen flex items-center justify-center py-20 bg-gradient-to-br from-pink-50 to-blue-50"
     >
       <RevealOnScroll>
-        <div className="max-w-3xl mx-auto px-4">
+        <div className="max-w-5xl mx-auto px-4">
           <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent text-center">
             About Me
           </h2>
@@ -39,43 +58,22 @@ export const About = () => {
               scalable applications.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="rounded-xl p-6 bg-pink-50 hover:-translate-y-1 transition-all">
-                <h3 className="text-xl font-bold mb-4 text-pink-600">
-                  Frontend
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {frontendSkills.map((tech, key) => (
-                    <span
-                      key={key}
-                      className="bg-pink-100 text-pink-600 py-1 px-3 rounded-full text-sm hover:bg-pink-200 
-                                    hover:shadow-[0_2px_8px_rgba(236,72,153,0.2)] transition"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {/* Frontend */}
+              <SkillCard title="Frontend" skills={frontendSkills} />
 
-              <div className="rounded-xl p-6 bg-pink-50 hover:-translate-y-1 transition-all">
-                <h3 className="text-xl font-bold mb-4 text-pink-600">
-                  Backend
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {backendSkills.map((tech, key) => (
-                    <span
-                      key={key}
-                      className="bg-pink-100 text-pink-600 py-1 px-3 rounded-full text-sm hover:bg-pink-200 
-                                    hover:shadow-[0_2px_8px_rgba(236,72,153,0.2)] transition"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
+              {/* Backend */}
+              <SkillCard title="Backend" skills={backendSkills} />
+
+              {/* Tools & Technologies */}
+              <SkillCard title="Tools & Technologies" skills={toolsAndTechnologies} />
+
+              {/* Soft Skills */}
+              <SkillCard title="Soft Skills" skills={softSkills} />
             </div>
           </div>
 
+          {/* Education & Experience */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
             <div className="p-6 rounded-xl border border-pink-200 bg-white shadow-md hover:-translate-y-1 transition-all">
               <h3 className="text-xl font-bold mb-4 text-pink-600">🏫 Education</h3>
@@ -123,3 +121,21 @@ export const About = () => {
     </section>
   );
 };
+
+// 🔹 Reusable Skill Card Component
+const SkillCard = ({ title, skills }) => (
+  <div className="rounded-xl p-6 bg-pink-50 hover:-translate-y-1 transition-all">
+    <h3 className="text-xl font-bold mb-4 text-pink-600">{title}</h3>
+    <div className="flex flex-wrap gap-2">
+      {skills.map((skill, key) => (
+        <span
+          key={key}
+          className="bg-pink-100 text-pink-600 py-1 px-3 rounded-full text-sm hover:bg-pink-200 
+            hover:shadow-[0_2px_8px_rgba(236,72,153,0.2)] transition"
+        >
+          {skill}
+        </span>
+      ))}
+    </div>
+  </div>
+);
