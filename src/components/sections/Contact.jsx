@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 
 export const Contact = () => {
+  const formRef = useRef();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -12,18 +13,25 @@ export const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    console.log("Service ID:", import.meta.env.VITE_SERVICE_ID);
+    console.log("Template ID:", import.meta.env.VITE_TEMPLATE_ID);
+    console.log("Public Key:", import.meta.env.VITE_PUBLIC_KEY);
+
     emailjs
       .sendForm(
         import.meta.env.VITE_SERVICE_ID,
         import.meta.env.VITE_TEMPLATE_ID,
-        e.target,
+        formRef.current,
         import.meta.env.VITE_PUBLIC_KEY
       )
       .then(() => {
         alert("Message Sent!");
         setFormData({ name: "", email: "", message: "" });
       })
-      .catch(() => alert("Oops! Something went wrong. Please try again."));
+      .catch((err) => {
+        console.error("EmailJS Error:", err);
+        alert("Oops! Something went wrong. Please try again.");
+      });
   };
 
   return (
@@ -36,11 +44,10 @@ export const Contact = () => {
           <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent text-center">
             Get In Touch
           </h2>
-          <form className="space-y-6" onSubmit={handleSubmit}>
+          <form ref={formRef} className="space-y-6" onSubmit={handleSubmit}>
             <div className="relative">
               <input
                 type="text"
-                id="name"
                 name="name"
                 required
                 value={formData.name}
@@ -55,12 +62,11 @@ export const Contact = () => {
             <div className="relative">
               <input
                 type="email"
-                id="email"
                 name="email"
                 required
                 value={formData.email}
                 className="w-full bg-pink-50 border border-pink-200 rounded px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:border-pink-500 focus:bg-white"
-                placeholder="kumarinishu407@gmail.com"
+                placeholder="xyz@gmail.com"
                 onChange={(e) =>
                   setFormData({ ...formData, email: e.target.value })
                 }
@@ -69,7 +75,6 @@ export const Contact = () => {
 
             <div className="relative">
               <textarea
-                id="message"
                 name="message"
                 required
                 rows={5}
